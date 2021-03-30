@@ -1,5 +1,5 @@
 ##1. Feed the image of the golden retriever into the horse-to-zebra model
-
+#2021/03/31
 import torch
 import torch.nn as nn
 from torchvision import transforms
