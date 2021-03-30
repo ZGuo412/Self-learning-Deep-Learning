@@ -116,4 +116,3 @@ out_img = transforms.ToPILImage()(out_t)
 out_img.show()
 
 
-##2. Search hubconf.py file on Github
