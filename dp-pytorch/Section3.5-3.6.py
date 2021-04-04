@@ -30,3 +30,32 @@ short_points = torch.ones(10, 2).to(dtype=torch.short)
 #type of tensor will be converted to larger type when mixing input types in operations
 
 print((torch.rand(5, dtype=torch.double) * torch.ones(5).short()).dtype) #gives me torch.float64
+
+#The tensor API
+
+#operations of tensor objects
+
+a = torch.ones(3,2)
+a_t = torch.transpose(a,0,1)
+print(a.shape, a_t.shape)
+#or
+print(a.transpose(0,1).shape)
+
+#Pointwise ops, take abs and cos functions as examples
+
+a = torch.rand(3,2)
+#print(a, a.abs(), a.cos())
+
+#Reduction ops like mean, std and norm
+
+print(a, a.mean(), a.std(), a.norm()) #overall mean, atd, norm
+
+#For each part I can do
+
+print(a.mean(-1))
+
+##Comparison operations
+print(a.equal(torch.randn(3,2)))
+print(a.max())
+
+#There are a lot of other operations and I will practice them while learning more about tensor
