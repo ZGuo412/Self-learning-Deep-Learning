@@ -51,3 +51,23 @@ print(points)
 
 print(points.stride() == points.t().stride())
 
+###For multi-dimension tranpose
+
+some_t = torch.ones(3, 4, 5)
+transpose_t = some_t.transpose(0, 2)  #Transpose first and third dimension
+
+transpose_tt = some_t.transpose(0,1) #Transpose first and second dimension
+
+print(transpose_t.shape, transpose_tt.shape)
+
+###Contiguous tensors: check if the order of values managed by the storage is same as order for values moving from rows.
+
+#view only works for contiguous tensors
+
+print(points.is_contiguous())
+print(points.t().is_contiguous())
+
+#it is able to get a contiguous tensor from uncontiguous tensor
+
+point_c = points.contiguous()
+print(point_c.is_contiguous(), point_c)
